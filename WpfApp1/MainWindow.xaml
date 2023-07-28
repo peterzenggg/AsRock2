@@ -1,0 +1,123 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+Title="ASRock Test Tool 1.0" Height="470" Width="800" Closing="Window_Closing">
+    <StackPanel Orientation="Vertical">
+        <Border BorderThickness="3" BorderBrush="Black" Height="40" Width="800">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Motherboard Model: " FontSize="20"/>
+                <Label Content="ASRock..." FontSize="20"/>
+            </StackPanel>
+        </Border>
+        <StackPanel Orientation="Horizontal" Margin="0,-3,0,0">
+            <Border BorderThickness="3" BorderBrush="Black" Height="400" Width="500">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="CPU Temp: " FontSize="20" FontWeight="Bold"/>
+                        <Label Name="CPUTemp" Content="20 " FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="MB Temp: " FontSize="20" FontWeight="Bold"/>
+                        <Label Name="MBTemp" Content="20 " FontSize="20"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                        <Label Content="CPU Fan1 Speed: " FontSize="20" FontWeight="Bold"/>
+                        <Label Name="CPUFan1Speed" Content="20 " FontSize="20"/>
+                        <Label Content="Target Speed: " FontSize="20" FontWeight="Bold"/>
+                        <TextBox Name="CPU1Fan1Targer" Text="0" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="50"></TextBox>
+                        <Label Content="%" FontSize="20"/>
+                        <Button Name="CPUFan1Apply" Content="Apply" Click="CPUFan1Apply_Click"></Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                        <Label Content="CPU Fan2 Speed: " FontSize="20" FontWeight="Bold"/>
+                        <Label Name="CPUFan2Speed" Content="20 " FontSize="20"/>
+                        <Label Content="Target Speed: " FontSize="20" FontWeight="Bold"/>
+                        <TextBox Name="CPU1Fan2Targer" Text="0" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="50"></TextBox>
+                        <Label Content="%" FontSize="20"/>
+                        <Button Name="CPUFan2Apply" Content="Apply" Click="CPUFan2Apply_Click"></Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                        <Label Content="ChassisFan1Speed: " FontSize="20" FontWeight="Bold"/>
+                        <Label Name="CH1Speed" Content="20 " FontSize="20"/>
+                        <Label Content="Target Speed: " FontSize="20" FontWeight="Bold"/>
+                        <TextBox Name="CH1Targer" Text="0" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="50"></TextBox>
+                        <Label Content="%" FontSize="20"/>
+                        <Button Name="CH1Apply" Content="Apply" Click="CH1Apply_Click"></Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                        <Label Content="ChassisFan2Speed" FontSize="20" FontWeight="Bold"/>
+                        <Label Name="CH2Speed" Content="20 " FontSize="20"/>
+                        <Label Content="Target Speed: " FontSize="20" FontWeight="Bold"/>
+                        <TextBox Name="CH2Targer" Text="0" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="50"></TextBox>
+                        <Label Content="%" FontSize="20"/>
+                        <Button Name="CH2Apply" Content="Apply" Click="CH2Apply_Click"></Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                        <Label Content="ChassisFan3Speed " FontSize="20" FontWeight="Bold"/>
+                        <Label Name="CH3Speed" Content="20 " FontSize="20"/>
+                        <Label Content="Target Speed: " FontSize="20" FontWeight="Bold"/>
+                        <TextBox Name="CH3Targer" Text="0" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="50"></TextBox>
+                        <Label Content="%" FontSize="20"/>
+                        <Button Name="CH3Apply" Content="Apply" Click="CH3Apply_Click"></Button>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0,15,0,0">
+                        <Label Content="ChassisFan4Speed" FontSize="20" FontWeight="Bold"/>
+                        <Label Name="CH4Speed" Content="20 " FontSize="20"/>
+                        <Label Content="Target Speed: " FontSize="20" FontWeight="Bold"/>
+                        <TextBox Name="CH4Targer" Text="0" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="50"></TextBox>
+                        <Label Content="%" FontSize="20"/>
+                        <Button Name="CH4Apply" Content="Apply" Click="CH4Apply_Click"></Button>
+                    </StackPanel>
+
+                </StackPanel>
+            </Border>
+            <Border BorderThickness="3" BorderBrush="Black" Height="400" Width="303" Margin="-3,0,0,0">
+                <StackPanel Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Available Channel" FontSize="20" FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical">
+                        <Label Content="🚨Channel 2: " FontSize="25" FontWeight="Bold"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Led Count: " FontSize="20" FontWeight="Bold"/>
+                            <TextBox Name="CH2TargetLed" Text="100" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="50"></TextBox>
+                            <Label Content="/" FontSize="20"/>
+                            <Label Name="CH2MaxLed" Content="100" FontSize="20"/>
+                            <Button Name="CH2LedApply" Content="Apply" Margin="10,0,0,0" Click="CH2LedApply_Click"></Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Effect" FontSize="20" FontWeight="Bold"/>
+                            <ComboBox Name="CH2LedCombobox" Width="150" Margin="10,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectedIndex="0" SelectionChanged="CH2LedCombobox_SelectionChanged">
+                                <ComboBoxItem Content="Static Red"/>
+                                <ComboBoxItem Content="Static Green"/>
+                                <ComboBoxItem Content="Static Blue"/>
+                                <ComboBoxItem Content="Rainbow"/>
+                            </ComboBox>
+                        </StackPanel>
+                        <Label Content="🚨Channel 6: " FontSize="25" FontWeight="Bold" Margin="0,50,0,0"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Led Count: " FontSize="20" FontWeight="Bold"/>
+                            <TextBox x:Name="CH6TargetLed" Text="100" FontSize="20" VerticalAlignment="Center" HorizontalContentAlignment="Center" Width="50"></TextBox>
+                            <Label Content="/" FontSize="20"/>
+                            <Label Name="CH6MaxLed" Content="100" FontSize="20"/>
+                            <Button Name="CH6LedApply" Content="Apply" Margin="10,0,0,0" Click="CH6LedApply_Click"></Button>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal">
+                            <Label Content="Effect" FontSize="20" FontWeight="Bold"/>
+                            <ComboBox Name="CH6LedCombobox" Width="150" Margin="10,0,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" SelectedIndex="0" SelectionChanged="CH6LedCombobox_SelectionChanged">
+                                <ComboBoxItem Content="Static Red"/>
+                                <ComboBoxItem Content="Static Green"/>
+                                <ComboBoxItem Content="Static Blue"/>
+                                <ComboBoxItem Content="Rainbow"/>
+                            </ComboBox>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+    </StackPanel>
+</Window>
